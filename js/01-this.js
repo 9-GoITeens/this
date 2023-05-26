@@ -117,124 +117,6 @@
 // fn(); // Який this ???
 
 /*
- * Функция это частный случай объекта -> ССЫЛОЧНЫЙ ТИП
- */
-
-// console.log('[] === []: ', [] === []);
-// console.log('{} === {}: ', {} === {});
-// console.log(
-//     'function() {} === function() {}: ',
-//     function () {} === function () {},
-// );
-
-// const fnA = function () {
-//     console.log('hello');
-// };
-
-// const fnB = fnA;
-// console.log('fnB === fnA: ', fnB === fnA);
-
-/*
- * Контекст (this)
- *    - Где и как была объявлена функция НЕ ИМЕЕТ НИКАКОГО ВЛИЯНИЯ на контекст.
- *    - Контекст определяется В МОМЕНТ ВЫЗОВА ФУНКЦИИ, если он не привязан явно.
- */
-
-/*
- * Как метод объекта. В контексте объекта.
- */
-
-// const user = {
-//     tag: 'Mango',
-//     showTag() {
-//         console.log('showTag -> this', this);
-//     },
-// };
-
-// user.showTag();
-
-/*
- * Вызов без контекста
- * - В строгом режиме = undefined
- * - Не в строгом режиме = window
- */
-
-// const foo = function () {
-//     console.log('foo -> this', this);
-// };
-
-// foo();
-
-/*
- * Как метод объекта, но объявлена как внешняя функция.
- * В контексте объекта.
- */
-
-// const showTag = function () {
-//     console.log('showTag -> this', this);
-//     console.log('showTag -> this.tag', this.tag);
-// };
-
-// showTag();
-
-// const user = {
-//     tag: 'Mango',
-// };
-
-// user.showUserTag = showTag;
-// console.log('user', user);
-
-// user.showUserTag();
-
-/*
- * Вызов без контекста, но объявлена как метод объекта.
- */
-
-// const user = {
-//     tag: 'Mango',
-//     showTag() {
-//         console.log('showTag -> this', this);
-//         console.log('showTag -> this.tag', this.tag);
-//     },
-// };
-
-// user.showTag();
-
-// const outerShowTag = user.showTag;
-
-// outerShowTag();
-
-/*
- * Контекст в callback-функциях
- */
-
-// const user = {
-//     tag: 'Mango',
-//     showTag() {
-//         console.log('showTag -> this', this);
-//         console.log('showTag -> this.tag', this.tag);
-//     },
-// };
-
-// const invokeAction = function (action) {
-//     console.log(action);
-
-//     action();
-// };
-
-// invokeAction(user.showTag);
-
-/*
- * Тренуємся 1
- */
-
-// const fn = function () {
-//     console.log('fn -> this', this);
-// };
-
-// fn(); // Какой this ???
-
-/*
  * Тренуємся 2
  */
 
@@ -274,12 +156,12 @@
 
 //     sweater.updateColor = changeColor;
 
-//     // sweater.updateColor('red'); // Який this ???
+//     sweater.updateColor('red'); // Який this ???
 
 //     return sweater.updateColor;
 // };
 
-// // makeChangeColor();
+// makeChangeColor();
 
 // const swapColor = makeChangeColor();
 
@@ -298,11 +180,11 @@
 // };
 
 // const updateColor = makeChangeColor();
-// // updateColor('yellow'); // Який this ???
+// updateColor('yellow'); // Який this ???
 
 // const hat = {
 //     color: 'blue',
-//     updateColor: updateColor,
+//     updateColor,
 // };
 
 // hat.updateColor('orange'); // Який this ???

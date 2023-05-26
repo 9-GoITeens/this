@@ -2,7 +2,25 @@
 // Напиши дві функції:
 
 // letMeSeeYourName(callback) - запитує імя користувача через prompt і повертає коллбек ф-цію callback
-// greet(name) - колбек який приймає імя і логує в консоль строку "Привіт" + name
+// gtree(name) - колбек який приймає імя і логує в консоль строку "Привіт" + name
+
+// function letMeSeeYourName(callback) {
+//     const name = prompt('Enter name');
+
+//     callback(name);
+// }
+
+// function gtree(name) {
+//     console.log(`Hello, ${name}`);
+// }
+
+// function greetWithAlert(name) {
+//     console.log(`Hello, ${name}`);
+//     alert(name);
+// }
+
+// // letMeSeeYourName(gtree);
+// letMeSeeYourName(greetWithAlert);
 
 // Задача 2
 // Напиши дві функції:
@@ -13,4 +31,18 @@
 
 // showProduct(product) - колбек приймаючий обєкт продукта і логіруючий його в консоль
 
-// makeProduct("Холодильник", 10000, logger);
+function makeProduct(name, price, callback) {
+    const product = {
+        name,
+        price,
+        id: Date.now(),
+    };
+
+    callback(product);
+}
+
+const logger = product => {
+    console.log(product);
+};
+
+makeProduct('Холодильник', 10000, logger);
