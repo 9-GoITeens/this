@@ -48,7 +48,7 @@
 // foo();
 
 /*
- * Як метод обєкта, але оголошена как зовнішня функция.
+ * Як метод обєкта, але оголошена як зовнішня функция.
  * В контексті обєкта.
  */
 
@@ -57,14 +57,14 @@
 //     console.log('showTag -> this.tag', this.tag);
 // };
 
-// showTag();
+// // showTag();
 
 // const user = {
 //     tag: 'Mango',
 // };
 
 // user.showTag = showTag;
-// console.log('user', user);
+// // console.log('user', user);
 
 // user.showTag();
 

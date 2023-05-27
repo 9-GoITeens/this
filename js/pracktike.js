@@ -31,18 +31,18 @@
 
 // showProduct(product) - колбек приймаючий обєкт продукта і логіруючий його в консоль
 
-function makeProduct(name, price, callback) {
-    const product = {
-        name,
-        price,
-        id: Date.now(),
-    };
+// function makeProduct(name, price, callback) {
+//     const product = {
+//         name,
+//         price,
+//         id: Date.now(),
+//     };
 
-    callback(product);
-}
+//     callback(product);
+// }
 
-const logger = product => {
-    console.log(product);
-};
+// const logger = product => {
+//     console.log(product);
+// };
 
-makeProduct('Холодильник', 10000, logger);
+// makeProduct('Холодильник', 10000, logger);
